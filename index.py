@@ -33,23 +33,26 @@ tabela = pd.read_csv("produtos.csv")
 #cadastrando os Produtos
 for linha in tabela.index:
     pyautogui.click(x=486, y=245)
+    #Codigo do Produto
     pyautogui.write(str(tabela.loc[linha,"codigo"]))
     pyautogui.press("tab")
     time.sleep(0.5)
+    #Marca do Produto
     pyautogui.write(str(tabela.loc[linha,"marca"]))
     pyautogui.press("tab")
-
+    #Tipo do Produto
     pyautogui.write(str(tabela.loc[linha,"tipo"]))
     pyautogui.press("tab")
-  
+    #Categoria do Produto
     pyautogui.write(str(tabela.loc[linha,"categoria"]))
     pyautogui.press("tab")
-   
+    #Preço do Produto
     pyautogui.write(str(tabela.loc[linha,"preco_unitario"]))
     pyautogui.press("tab")
-
+    #Custo do Produto
     pyautogui.write(str(tabela.loc[linha,"custo"]))
     pyautogui.press("tab")
+    #Obs
     obs = tabela.loc[linha, "obs"]
     if not pd.isna(obs):
       pyautogui.write(obs)
